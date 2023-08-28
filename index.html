@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Ali Frag" />
+    <title>CRUD-Operation</title>
+    <!-- ^========== google-fonts ========== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Belanosima:wght@600&family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ^========== bootstarb css ========== -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- ^========= fontawsome ========== -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+
+    <!-- =========Main-css========== -->
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+
+  <body class="bg-body-tertiary">
+    <header>
+      <div class="title text-center py-4">
+        <h1 class="title-fonts-2">CRUD-Operation</h1>
+      </div>
+      <input
+        class="form-control w-75 m-auto"
+        type="text"
+        placeholder="Search By Name"
+        id="searchInput"
+      />
+    </header>
+    <main>
+      <section class="p-5">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-5">
+              <div class="inputs">
+                <input
+                  id="productNameInput"
+                  class="form-control p-2"
+                  type="text"
+                  placeholder="Enter Name Of Product"
+                />
+                <p
+                  id="pargaraphName"
+                  class="alert alert-danger p-1 my-2 d-none"
+                >
+                  value is valied
+                </p>
+                <input
+                  id="productCategoryInput"
+                  class="form-control my-3 p-22"
+                  type="text"
+                  placeholder="Enter Name Of Category"
+                />
+                <p
+                  id="pargaraphCateg"
+                  class="alert alert-danger p-1 my-2 d-none"
+                >
+                  value is valied
+                </p>
+                <input
+                  id="productPriceInput"
+                  class="form-control my-3 p-2"
+                  type="number"
+                  placeholder="Enter Price Of Product"
+                />
+                <p
+                  id="pargaraphPrice"
+                  class="alert alert-danger p-1 my-2 d-none"
+                >
+                  value is valied
+                </p>
+                <textarea
+                  name="desc"
+                  id="productDescription"
+                  placeholder="Enter productDescription"
+                ></textarea>
+                <p
+                  id="pargaraphDesc"
+                  class="alert alert-danger p-1 my-2 d-none"
+                >
+                  value is valied
+                </p>
+                <input
+                  id="productCountInput"
+                  class="form-control my-3 p-2"
+                  type="number"
+                  placeholder="Enter Count Of Product"
+                />
+                <button
+                  type="button"
+                  id="addProductBtn"
+                  class="btn btn-primary w-100"
+                >
+                  Add Product
+                </button>
+                <button
+                  type="button"
+                  id="updateProductBtn"
+                  class="btn btn-warning w-100 d-none"
+                >
+                  Update Product
+                </button>
+              </div>
+            </div>
+            <div class="col-md-7">
+              <div class="table-responsive">
+                <table class="table table-info table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">productName</th>
+                      <th scope="col">productPrice</th>
+                      <th scope="col">productCategory</th>
+                      <th scope="col">productDescription</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableBody"></tbody>
+                </table>
+              </div>
+              <!-- ========== Start Model ========== -->
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                id="delAllBtn"
+                class="btn btn-danger w-100 d-none"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+              >
+                Delete All Products
+              </button>
+
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="staticBackdrop"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      Are you sure to delete all products
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button
+                        id="deleteAllBtn"
+                        type="button"
+                        class="btn btn-danger"
+                      >
+                        Delete
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- ========== End Model ========== -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ==========  bootstarb js  ========== -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- =========main-js ========== -->
+    <script src="./js/index.js"></script>
+  </body>
+</html>
